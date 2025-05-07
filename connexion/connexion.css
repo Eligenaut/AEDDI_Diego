@@ -1,0 +1,145 @@
+/* connexion.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Empêche le défilement */
+    background: #1e1e1e; /* Fond sombre */
+    color: #ecf0f1; /* Texte clair par défaut */
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-container {
+    display: flex;
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    overflow: hidden; /* Empêche le défilement */
+}
+
+.auth-image-section {
+    flex: 0.6; /* 60% de la largeur */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.auth-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
+}
+
+.auth-form-section {
+    flex: 0.4; /* 40% de la largeur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #2c3e50; /* Fond sombre pour la section formulaire */
+}
+
+.auth-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    background: #34495e; /* Fond sombre pour le formulaire */
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.auth-title {
+    color: #ecf0f1; /* Texte clair */
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.auth-input-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-input-label {
+    display: block;
+    color: #bdc3c7; /* Texte clair */
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #7f8c8d;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #2c3e50; /* Fond sombre */
+    color: #ecf0f1; /* Texte clair */
+    transition: border-color 0.3s ease;
+}
+
+.auth-input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-button:hover {
+    background: #2980b9;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: #2980b9;
+}
+
+/* Responsive pour petit écran */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column-reverse;
+    }
+
+    .auth-image-section,
+    .auth-form-section {
+        flex: none;
+        width: 100%;
+    }
+
+    /* Ajustement de la hauteur pour l'image et le formulaire sur petit écran */
+    .auth-image-section {
+        height: 40vh;
+    }
+
+    .auth-form-section {
+        height: 60vh;
+        padding: 1rem;
+    }
+
+    .auth-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .auth-title {
+        font-size: 1.8rem;
+    }
+}

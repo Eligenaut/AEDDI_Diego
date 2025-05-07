@@ -1,0 +1,266 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fond clair */
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur pour la table */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
+}
+
+/* Style du titre */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Formulaire de recherche et de sélection de promotion */
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Style de la table */
+.members-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed; /* Fixe la largeur des colonnes */
+}
+
+.members-table th, .members-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    word-wrap: break-word; /* Casse les mots longs */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ajoute "..." pour le texte tronqué */
+    white-space: nowrap; /* Empêche les sauts de ligne */
+}
+
+.members-table th {
+    background-color: #580c3d; /* Couleur de fond des en-têtes */
+    color: white;
+}
+
+.members-table td {
+    background-color: #f9f9f9;
+}
+
+/* Largeur des colonnes spécifiques */
+.members-table th:nth-child(5), .members-table td:nth-child(5),
+.members-table th:nth-child(6), .members-table td:nth-child(6) {
+    width: 100px;
+}
+
+/* Style des boutons d'action */
+.btn {
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Bouton "Voir" (bleu) */
+.btn-voir {
+    background-color: #007bff;
+}
+
+.btn-voir:hover {
+    background-color: #0056b3;
+}
+
+/* Bouton "Modifier" (vert) */
+.btn-modifier {
+    background-color: #28a745;
+}
+
+.btn-modifier:hover {
+    background-color: #218838;
+}
+
+/* Bouton "Supprimer" (rouge) */
+.btn-supprimer {
+    background-color: #dc3545;
+}
+
+.btn-supprimer:hover {
+    background-color: #c82333;
+}
+
+/* Style pour le bouton retour */
+.btn-back {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Espacement entre l'icône et le texte */
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}
+
+/* Style de l'icône */
+.btn-back i {
+    font-size: 16px;
+}
+
+/* Styles pour la fenêtre modale */
+.modal {
+    display: none; /* Cache la fenêtre modale par défaut */
+    position: fixed; /* Positionnement fixe */
+    z-index: 1; /* Met la fenêtre modale au-dessus des autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Occupe toute la largeur de l'écran */
+    height: 100%; /* Occupe toute la hauteur de l'écran */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre semi-transparent */
+    padding-top: 60px; /* Espace au-dessus du contenu modal */
+}
+
+/* Contenu de la fenêtre modale */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton de fermeture de la fenêtre modale */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+/* Effet au survol ou au focus du bouton de fermeture */
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+/* Détails dans la fenêtre modale */
+.modal-content div {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.modal-content strong {
+    color: #007BFF; /* Couleur bleue pour les éléments en gras */
+}
+
+/* Photo dans la fenêtre modale */
+.modal-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+    /* Réduire les espacements et tailles sur petits écrans */
+    .container {
+        padding: 10px;
+    }
+
+    .members-table th, .members-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Modal avec une largeur plus grande pour les petits écrans */
+    .modal-content {
+        width: 90%;
+    }
+
+    .modal-content img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Transformation de la table en bloc pour petits écrans */
+    .members-table {
+        display: block; /* Transforme la table en bloc */
+        width: 100%;
+        overflow-x: auto; /* Permet le défilement horizontal */
+    }
+
+    .members-table thead {
+        display: none; /* Cache les en-têtes sur les petits écrans */
+    }
+
+    .members-table tr {
+        display: block; /* Affiche chaque ligne comme un bloc */
+        margin-bottom: 10px; /* Espacement entre les lignes */
+        border: 1px solid #ddd; /* Bordure pour chaque ligne */
+        border-radius: 8px; /* Bords arrondis */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .members-table td {
+        display: flex; /* Affiche les cellules en flexbox */
+        justify-content: space-between; /* Espace entre les éléments */
+        align-items: center; /* Centrage vertical des éléments */
+        padding: 10px; /* Espacement des cellules */
+        border: none;
+        border-bottom: 1px solid #ddd; /* Bordure en bas de chaque cellule */
+        font-size: 14px; /* Taille du texte */
+    }
+
+    .members-table td:last-child {
+        border-bottom: none; /* Supprime la bordure en bas de la dernière cellule */
+    }
+
+    /* Ajouter un label avant chaque donnée */
+    .members-table td:before {
+        content: attr(data-label); /* Utilisation d'un attribut personnalisé */
+        font-weight: bold;
+        color: #580c3d; /* Couleur des labels */
+        margin-right: 10px; /* Espace à droite du label */
+    }
+
+    /* Définir des labels spécifiques pour certaines colonnes */
+    .members-table td:nth-child(1):before { content: "Nom"; }
+    .members-table td:nth-child(2):before { content: "Prénom"; }
+    .members-table td:nth-child(3):before { content: "Etablissement"; }
+    .members-table td:nth-child(4):before { content: "Parcours"; }
+    .members-table td:nth-child(5):before { content: "Niveau d'étude"; }
+    .members-table td:nth-child(6):before { content: "Promotion"; }
+    .members-table td:nth-child(7):before { content: "Actions"; }
+}
